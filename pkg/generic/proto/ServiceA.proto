@@ -1,0 +1,24 @@
+syntax = "proto3";
+
+package api;
+
+message Request {
+  string userId = 1;
+  string message = 2;
+}
+
+message Response {
+  string message = 1;
+}
+
+service ServiceA {
+  rpc methodA(Request) returns (Response);
+  rpc methodB(Request) returns (Response);
+  rpc methodC(Request) returns (Response);
+}
+
+service ServiceB {
+  rpc methodA(Request) returns (Response);
+  rpc methodB(Request) returns (Response);
+  rpc methodC(Request) returns (Response);
+}
